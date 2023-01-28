@@ -34,5 +34,8 @@ public class Main {
         System.out.println(medium);
         System.out.println(large);
 
+        hyundai.refill();
+        leningrad.refill();
+        large.refill();
     }
 }

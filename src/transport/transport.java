@@ -1,6 +1,6 @@
 package transport;
 
-public class transport {
+public abstract class transport {
     private final String brand;
     private final String model;
     private final int productionYear;
@@ -68,4 +68,6 @@ public class transport {
         return "Марка - " + brand + ", модель - " + model + ", " + productionYear + " год выпуска, страна сборки - "
                 + productionCountry + ", цвет - " + color + ", максимальная скорость - " + maxSpeed + " км/ч";
     }
+
+    public abstract void refill();
 }

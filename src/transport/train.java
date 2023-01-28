@@ -77,4 +77,9 @@ public class train extends transport {
     public String toString() {
         return super.toString() + ", отходит от станции: " + departureStation + " и следует до станции: " + arrivalStation + ". Цена поездки — " + travelPrice + " рублей, в поезде " + numberOfWagons + " вагонов";
     }
+
+    @Override
+    public void refill() {
+        System.out.println("Поезда нужно заправлять дизелем.");
+    }
 }

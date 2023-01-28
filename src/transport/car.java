@@ -137,4 +137,9 @@ public class car extends transport {
                 + ", коробка передач - " + transmission + ", тип кузова - " + carBody + ", регистрационный номер - "
                 + regNamber + ", количество мест - " + capacity + ", резина - " + (summerTires ? "летняя" : "зимняя") + ", " + key;
     }
+
+    @Override
+    public void refill() {
+        System.out.println("Автомобили можно заправлять бензином, дизелем на заправке или заряжать на специальных электропарковках, если это электрокар.");
+    }
 }
