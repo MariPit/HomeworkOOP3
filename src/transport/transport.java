@@ -1,14 +1,13 @@
 package transport;
 
-public class transport {
+public abstract class transport <T extends driver> {
     private final String brand;
     private final String model;
-    private final int productionYear;
-    private final String productionCountry;
-    private String color;
-    private int maxSpeed;
+    private double engineVolume;
+    private T driver;
 
-    public transport(String brand, String model, int productionYear, String productionCountry, String color, int maxSpeed) {
+    public transport(String brand, String model, double engineVolume) {
+        this.driver = driver;
         if (brand == null || brand.isEmpty() || brand.isBlank()) {
             brand = "Нет информации";
         }
@@ -18,54 +17,24 @@ public class transport {
             model = "Нет информации";
         }
         this.model = model;
-
-        if (productionYear <= 0) {
-            productionYear = 2000;
+        setEngineVolume(engineVolume);
         }
-        this.productionYear = productionYear;
-
-        if (productionCountry == null || productionCountry.isEmpty() || productionCountry.isBlank()) {
-            productionCountry = "Россия";
-        }
-        this.productionCountry = productionCountry;
-
-        setColor(color);
-        setMaxSpeed(maxSpeed);
+    public double getEngineVolume() {return engineVolume;}
+    public void setEngineVolume(double engineVolume) {
+        this.engineVolume = engineVolume;
+        if (engineVolume == 0) {
+        this.engineVolume = 1.5;}
     }
+    public abstract String startMove();
+    public abstract String finishMove();
 
-    public String getBrand() {
-        return brand;
-    }
+    public String getBrand() {return brand;}
+    public String getModel() {return model;}
+    public T getDriver() {return driver;}
 
-    public String getModel() {
-        return model;
-    }
-
-    public String getColor() {
-        return color;
-    }
-
-    public void setColor(String color) {
-        if (color == null || color.isEmpty() || color.isBlank()) {
-            color = "белый";
-        }
-        this.color = color;
-    }
-
-    public int getMaxSpeed() {
-        return maxSpeed;
-    }
-
-    public void setMaxSpeed(int maxSpeed) {
-        if (maxSpeed <= 0 ) {
-            maxSpeed = 180;
-        }
-        this.maxSpeed = maxSpeed;
-    }
 
     @Override
     public String toString() {
-        return "Марка - " + brand + ", модель - " + model + ", " + productionYear + " год выпуска, страна сборки - "
-                + productionCountry + ", цвет - " + color + ", максимальная скорость - " + maxSpeed + " км/ч";
+        return "Транспортное средство марки " + brand + ", модель " + model + ", объем двигателя " + engineVolume;
     }
 }
