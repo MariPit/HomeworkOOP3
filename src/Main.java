@@ -1,38 +1,54 @@
-import transport.bus;
-import transport.train;
-import transport.car;
+import transport.*;
 
 public class Main {
     public static void main(String[] args) {
-        car lada = new car("Lada", "Granta", 1.7, "желтый", 120, 2015, "Россия", "механическая", "седан","у777уу777", 4,true,new car.Key(true, false));
-        System.out.println(lada);
+        bus gaz = new bus("ГАЗ", "123", 6.2);
+        bus laz = new bus("ЛАЗ", "456", 5.1);
+        bus paz = new bus("ПАЗ", "789", 4.9);
+        bus maz = new bus("МАЗ", "666", 5.6);
+        System.out.println(gaz);
+        System.out.println(gaz.bestLapTime());
+        System.out.println(laz);
+        System.out.println(laz.pitStop());
+        System.out.println(paz);
+        System.out.println(paz.maxSpeed());
+        System.out.println(maz);
+        System.out.println(maz.startMove());
+        System.out.println(maz.finishMove());
 
-        car audi = new car("Audi","A8 50 L TDI quattro",0,null, 180,0,"Германия", "автомат", "внедорожник",null, 0,false, new car.Key(false,true));
-        System.out.println(audi);
-
-        car bmw = new car("BMW","Z8",3,"черный", 220,2021,"Германия", null, "пикап","в999вв999", 2, true, new car.Key(true,true));
+        car lada = new car("Lada", "Granta", 1.7);
+        car audi = new car("Audi", "A8 50 L TDI quattro", 0);
+        car bmw = new car("BMW", "Z8", 3);
+        car kia = new car("Kia", "Sportage 4 поколение", 2.4);
+        lada.car();
+        lada.startMove();
+        audi.car();
+        audi.pitStop();
         bmw.car();
-
-        car kia = new car("Kia","Sportage 4 поколение",2.4,"красный", 0, 2018,"Южная Корея","механическая", "универсал","х123оо456", 3, false, new car.Key(false,false));
+        bmw.bestLapTime();
         kia.car();
+        kia.finishMove();
 
-        car hyundai = new car ("Hyundai","Avante",1.6,"оранжевый", 150, 2016,"Южная Корея", "автомат", "купе","н159аа753", 4,false,null);
-        hyundai.car();
+        for (int i = 1; i <= 4; i++) {
+            trucks trucks = new trucks("Грузовик " + i, "1" + i, 3.2 +i);
+            System.out.println(trucks);
+            System.out.println(trucks.startMove());
+            System.out.println(trucks.maxSpeed());
+            System.out.println(trucks.pitStop());
+            System.out.println(trucks.finishMove());
+            System.out.println(trucks.bestLapTime());
+        }
 
-        hyundai.changeTyres(4);
-        System.out.println(hyundai);
+        driverB max = new driverB("Максим", true, 5);
+        driverC vlad = new driverC("Влад", true, 4);
+        driverD stas = new driverD("Стас", true, 3);
+        max.startMove();
+        vlad.refill();
+        stas.finishMove();
 
-        train lastochka = new train("Ласточка", "В-901", 2011, "Россия", null,301, 3500, 0, "Белорусский вокзал", "Минск-Пассажирский", 8);
-        train leningrad = new train("Ленинград", "D-125", 2019, "Россия", null,270, 1700, 0, "Ленинградский вокзал", "Ленинград-Пассажирский", 8);
-        System.out.println(lastochka);
-        System.out.println(leningrad);
+        System.out.println(max);;
 
-        bus small = new bus("ПАЗ","12345", 2001, "Россия", "желтый", 200);
-        bus medium = new bus("ЛАЗ", "987-Н", 2020, "Аргентина", null, 210);
-        bus large = new bus("Икарус", "666-ад", 0, null, "красный", -120);
-        System.out.println(small);
-        System.out.println(medium);
-        System.out.println(large);
-
+        //vlad.message(gaz);
+        //stas.info(trucks);
     }
 }
