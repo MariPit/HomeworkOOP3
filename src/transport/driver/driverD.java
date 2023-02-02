@@ -1,6 +1,8 @@
-package transport;
+package transport.driver;
 
-public class driverD extends driver{
+import transport.driver.driver;
+
+public class driverD extends driver {
     public driverD(String name, boolean hasDriverLicense, int drivingExperience) {
         super(name, hasDriverLicense, drivingExperience);
     }

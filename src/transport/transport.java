@@ -1,12 +1,14 @@
 package transport;
 
-public abstract class transport <T extends driver> {
+import transport.driver.driver;
+
+public abstract class transport <T extends driver> implements competing {
     private final String brand;
     private final String model;
     private double engineVolume;
     private T driver;
 
-    public transport(String brand, String model, double engineVolume) {
+    public transport(String brand, String model, double engineVolume, T driver) {
         this.driver = driver;
         if (brand == null || brand.isEmpty() || brand.isBlank()) {
             brand = "Нет информации";
@@ -27,6 +29,7 @@ public abstract class transport <T extends driver> {
     }
     public abstract String startMove();
     public abstract String finishMove();
+    public abstract void printType();
 
     public String getBrand() {return brand;}
     public String getModel() {return model;}

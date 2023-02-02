@@ -1,10 +1,15 @@
-package transport;
+package transport.trucks;
 
-public class trucks extends transport <driverC> implements competing {
+import transport.driver.driver;
+import transport.driver.driverC;
+import transport.transport;
 
-    public trucks(String brand, String model, double engineVolume) {
+public class trucks extends transport<driverC>  {
 
-        super(brand, model, engineVolume);
+    private LoadCapacity loadCapacity;
+    public trucks(String brand, String model, double engineVolume, driver driverC, LoadCapacity loadCapacity) {
+        super(brand, model, engineVolume, (transport.driver.driverC) driverC);
+        this.loadCapacity = loadCapacity;
     }
 
     @Override
@@ -15,6 +20,15 @@ public class trucks extends transport <driverC> implements competing {
     @Override
     public String finishMove() {
         return "Грузовой автомобиль марки " + getBrand() + " закончил движение";
+    }
+
+    @Override
+    public void printType() {
+        if (loadCapacity != null) {
+            System.out.println(loadCapacity);
+        } else {
+            System.out.println("Данных не достаточно");
+        }
     }
 
     @Override
@@ -36,5 +50,13 @@ public class trucks extends transport <driverC> implements competing {
         int maxBound = 120;
         int maxSpeed = (int)(minBound + (maxBound - minBound) * Math.random());
         return "Максимальная скорость грузового автомобиля марки " + getBrand() + ": " + maxSpeed;
+    }
+
+    public LoadCapacity getLoadCapacity() {
+        return loadCapacity;
+    }
+
+    public void setLoadCapacity(LoadCapacity loadCapacity) {
+        this.loadCapacity = loadCapacity;
     }
 }
