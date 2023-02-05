@@ -1,14 +1,14 @@
 package transport.bus;
 
-import transport.driver.driver;
-import transport.driver.driverD;
-import transport.transport;
+import transport.driver.Driver;
+import transport.driver.DriverD;
+import transport.Transport;
 
-public class bus extends transport <driverD>  {
+public class Bus extends Transport<DriverD> {
 
     private Capacity capacity;
-    public bus(String brand, String model, double engineVolume, driver driverD, Capacity capacity) {
-        super(brand, model, engineVolume, (transport.driver.driverD) driverD);
+    public Bus(String brand, String model, double engineVolume, Driver driverD, Capacity capacity) {
+        super(brand, model, engineVolume, (DriverD) driverD);
         this.capacity = capacity;
     }
 

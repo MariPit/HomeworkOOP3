@@ -1,15 +1,15 @@
 package transport.car;
 
-import transport.driver.driver;
-import transport.driver.driverB;
-import transport.transport;
+import transport.driver.Driver;
+import transport.driver.DriverB;
+import transport.Transport;
 
-public class car extends transport<driverB> {
+public class Car extends Transport<DriverB> {
 
     private BodyType bodyType;
 
-    public car(String brand, String model, double engineVolume, driver driverB, BodyType bodyType) {
-        super(brand, model, engineVolume, (transport.driver.driverB) driverB);
+    public Car(String brand, String model, double engineVolume, Driver driverB, BodyType bodyType) {
+        super(brand, model, engineVolume, (DriverB) driverB);
         this.bodyType = bodyType;
     }
 

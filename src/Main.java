@@ -1,6 +1,5 @@
-import transport.car.car;
-import transport.driver.driver;
-import transport.driver.driverB;
+import transport.car.Car;
+import transport.driver.DriverB;
 
 public class Main {
 
@@ -19,7 +18,7 @@ public class Main {
 //        System.out.println(maz.startMove());
 //        System.out.println(maz.finishMove());
 //
-        car lada = new car("Lada", "Granta", 1.7, new driverB("Максим", true,5), null);
+        Car lada = new Car("Lada", "Granta", 1.7, new DriverB("Максим", true,5), null);
 //        car audi = new car("Audi", "A8 50 L TDI quattro", 0);
 //        car bmw = new car("BMW", "Z8", 3);
 //        car kia = new car("Kia", "Sportage 4 поколение", 2.4);
