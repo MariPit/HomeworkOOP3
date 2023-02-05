@@ -4,10 +4,10 @@ import transport.driver.Driver;
 import transport.driver.DriverC;
 import transport.Transport;
 
-public class trucks extends Transport<DriverC> {
+public class Trucks extends Transport<DriverC> {
 
     private LoadCapacity loadCapacity;
-    public trucks(String brand, String model, double engineVolume, Driver driverC, LoadCapacity loadCapacity) {
+    public Trucks(String brand, String model, double engineVolume, Driver driverC, LoadCapacity loadCapacity) {
         super(brand, model, engineVolume, (DriverC) driverC);
         this.loadCapacity = loadCapacity;
     }
