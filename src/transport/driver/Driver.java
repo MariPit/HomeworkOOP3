@@ -1,11 +1,11 @@
-package transport;
+package transport.driver;
 
-public abstract class driver {
+public abstract class Driver {
     private String name;
     private boolean hasDriverLicense;
     private int drivingExperience;
 
-    public driver(String name, boolean hasDriverLicense, int drivingExperience) {
+    public Driver(String name, boolean hasDriverLicense, int drivingExperience) {
         this.name = name;
         this.hasDriverLicense = hasDriverLicense;
         this.drivingExperience = drivingExperience;
